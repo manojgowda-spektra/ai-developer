@@ -1,0 +1,12 @@
+name: Lab Doctor — content freshness
+on:
+  pull_request:
+    paths: ['**.md']
+  workflow_dispatch:
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan lab guides for content rot
+        run: node .github/labdoctor/labdoctor-scan.js --check .

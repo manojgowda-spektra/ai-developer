@@ -1,0 +1,9 @@
+{
+ "updatedAt": "2026-07-04T08:59:27.249Z",
+ "keys": [
+  "DEPRECATED_DEPENDENCY|gpt-35-turbo|Dotnet/challenges/Challenge-01.md",
+  "DEPRECATED_DEPENDENCY|gpt-35-turbo|Python/challenges/Challenge-01.md",
+  "DEPRECATED_DEPENDENCY|text-embedding-ada-002|Dotnet/challenges/Challenge-05.md",
+  "DEPRECATED_DEPENDENCY|text-embedding-ada-002|Python/challenges/Challenge-05.md"
+ ]
+}
