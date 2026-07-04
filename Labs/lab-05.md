@@ -24,7 +24,7 @@ In this task, you will explore different flow types in Microsoft Foundry by depl
 
     ![](./media/new/E5T1S2-1401.png)
 
-1. Search for **text-embedding-ada-002 (1)**, select **text-embedding-ada-002 (2)** model, and click on **Confirm (3)**.
+1. Search for **text-embedding-3-small (1)**, select **text-embedding-3-small (2)** model, and click on **Confirm (3)**.
 
     ![](./media/new/w2.png)
 
@@ -58,7 +58,7 @@ In this task, you will explore different flow types in Microsoft Foundry by depl
  
     - Check the box labeled **Add vector search to this search resource (7)**
 
-    - Select an embedding model: choose **Azure OpenAi - text-embedding-ada-002 (8)** from the dropdown menu.
+    - Select an embedding model: choose **Azure OpenAi - text-embedding-3-small (8)** from the dropdown menu.
 
     - Then click on **Next (9)**
 
@@ -189,7 +189,7 @@ In this task, you will explore different flow types in Microsoft Foundry by crea
             }
             payload = {
                 "input": text,
-                "dimensions": 1536  # Standard for text-embedding-ada-002
+                "dimensions": 1536  # text-embedding-3-small default (same 1536 dims as the retired ada-002)
             }
             
             try:
