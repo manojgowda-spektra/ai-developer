@@ -14,6 +14,10 @@
     { "token": "gpt-35-turbo", "replacement": "gpt-4o-mini", "deprecated": "legacy model on the Azure OpenAI retirement path", "note": "GPT-3.5 Turbo deployments are legacy; new labs should target the gpt-4o family." },
     { "token": "text-davinci-003", "replacement": "gpt-4o-mini", "deprecated": "retired 2024", "note": "Davinci completions models are fully retired on Azure OpenAI." }
   ],
+  "eolRuntimes": [
+    { "token": "Node.js 16", "replacement": "Node.js 22 (current LTS)", "eol": "2023-09-11", "note": "Node 16 reached end-of-life 2023-09-11 (endoflife.date/nodejs); guides should state a supported version floor.", "source": "endoflife.date via changeintel harvest 2026-07-04" },
+    { "token": "Node.js 18", "replacement": "Node.js 22 (current LTS)", "eol": "2025-04-30", "note": "Node 18 reached end-of-life 2025-04-30 (endoflife.date/nodejs); guides should state a supported version floor.", "source": "endoflife.date via changeintel harvest 2026-07-04" }
+  ],
   "renamedProducts": [
     { "token": "Azure Active Directory", "replacement": "Microsoft Entra ID", "renamed": "2023-08", "note": "Portal blade renamed; guides directing learners to 'Azure Active Directory' no longer match the portal navigation." },
     { "token": "Form Recognizer", "replacement": "Azure AI Document Intelligence", "renamed": "2023", "note": "Service renamed; portal search for the old name is unreliable for learners." },
