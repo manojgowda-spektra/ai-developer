@@ -29,6 +29,7 @@ const TOKENS = [
   ...(REGISTRY.retiredSkus || []).map((s) => ({ token: s.token, type: 'RETIRED_SKU', replacement: s.replacement, note: s.note })),
   ...(REGISTRY.deprecatedCommands || []).map((c) => ({ token: c.token, type: 'DEPRECATED_DEPENDENCY', replacement: c.replacement, note: c.note })),
   ...(REGISTRY.renamedProducts || []).map((r) => ({ token: r.token, type: 'RENAMED_PRODUCT', replacement: r.replacement, note: r.note })),
+  ...(REGISTRY.eolRuntimes || []).map((e) => ({ token: e.token, type: 'EOL_RUNTIME', replacement: e.replacement, note: e.note })),
 ].map((t) => ({ ...t, re: new RegExp('\\b' + t.token.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i') }));
 
 function* walkMd(dir) {
@@ -92,7 +93,7 @@ if (fs.existsSync(BASELINE_FILE)) {
 const fresh = findings.filter((f) => !baseline.has(keyOf(f)));
 const known = findings.length - fresh.length;
 
-const label = { RETIRED_SKU: 'retired SKU', DEPRECATED_DEPENDENCY: 'deprecated dependency', RENAMED_PRODUCT: 'renamed product', BROKEN_ASSET_LINK: 'broken image link' };
+const label = { RETIRED_SKU: 'retired SKU', DEPRECATED_DEPENDENCY: 'deprecated dependency', RENAMED_PRODUCT: 'renamed product', BROKEN_ASSET_LINK: 'broken image link', EOL_RUNTIME: 'EOL runtime version' };
 for (const f of (CHECK ? fresh : findings)) {
   console.log(`::${CHECK ? 'error' : 'warning'} file=${f.file},line=${f.line}::[${label[f.type] || f.type}] "${f.token}"${f.replacement ? ` -> ${f.replacement}` : ''} | ${f.note || ''}`);
   console.log(`   ${f.file}:${f.line}  ${f.evidence.slice(0, 140)}`);
