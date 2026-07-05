@@ -109,14 +109,14 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
 
 ### Use AI Studio to deploy a Text Embedding model
 
-1. Using [Azure AI Studio](https://ai.azure.com/resource/deployments), deploy a *Standard* **text-embedding-ada-002** model in the same deployment as your previous GPT-4o model. Once deployed, add the **Embedding Deployment Model Name** as a new setting to the **appsettings.json** file in the reference application. You will need this value later when configuring the Semantic Search Plugin.
+1. Using [Azure AI Studio](https://ai.azure.com/resource/deployments), deploy a *Standard* **text-embedding-3-small** model in the same deployment as your previous GPT-4o model. Once deployed, add the **Embedding Deployment Model Name** as a new setting to the **appsettings.json** file in the reference application. You will need this value later when configuring the Semantic Search Plugin.
 
     ![Embedding Model](./Resources/images/text-embedding-ada-002.png)
 
 2. Add the **Embedding Deployment Model Name** to the **appsettings.json** file in the reference application.
 
     ```json
-    "EMBEDDINGS_DEPLOYMODEL": "text-embedding-ada-002"
+    "EMBEDDINGS_DEPLOYMODEL": "text-embedding-3-small"
     ```
 
     :bulb: This model will be used to translate your documents and queries into embeddings (see above)
@@ -142,7 +142,7 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
     ![Upload Files](./Resources/images/ch05i02.png)
 
 1. Check **Add Vector Search**
-1. Select the **text-embedding-ada-002** model created previously
+1. Select the **text-embedding-3-small** model created previously
 1. Click Next
 
     ![Vector Search](./Resources/images/ch05i03.png)
@@ -259,7 +259,7 @@ In this challenge, you will create a Semantic Search Plugin that utilizes an Azu
 
 ## Success Criteria
 
-1. Verify that you deployed the text-embedding-ada-002 Text Embedding model in Azure AI Foundry Studio
+1. Verify that you deployed the text-embedding-3-small Text Embedding model in Azure AI Foundry Studio
 1. Verify that you deployed an AI Search Index and imported the Contoso Handbook PDF
 1. Verify that the Chatbot is able to answer questions about the Contoso Handbook by querying the AI Search Index using the Semantic Search Plugin
 
